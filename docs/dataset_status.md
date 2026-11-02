@@ -10,11 +10,11 @@ Only facts that were checked are marked VERIFIED. Everything else is UNVERIFIED 
 | Drive folder `1LAteNdWaa1eJQ3vOVR8BziN2LoIsQlHc` | same | same |
 | Drive folder "videos" `1Wy1LgQPm9hW4aOQLw2Z3newzuzlKXcNv` | User says: fixed wide match shots | same |
 
-**To fill in once one clip is downloaded to `data/` (git-ignored):** run `md_probe data/<file>` and record:
+Clip properties (from `md_probe`, ffprobe, and looking at frames):
 
 | Clip | Resolution | FPS | Codec / pix fmt | Duration | Ball visible at native res? | Annotations | Source / consent / licence |
 |---|---|---|---|---|---|---|---|
-| unknown — to be measured | | | | | | | |
+| `117092_panorama_1st_half.mp4` (local `assets/`, git-ignored, 6.4 GB) | **3840×1906** (VERIFIED, md_probe) | **25** | H.264 Constrained Baseline, yuv420p, BT.601 (bt470bg) limited range; keyframe every 2 s, no B-frames; AAC 44.1 kHz stereo | **2695 s** (44:55, first half) | Players ~20–60 px tall at native res; ball only a few px, often not visible at night | None | Source / consent / licence: **unknown — ask the user**. Not for public demo video until confirmed |
 
 Questions to answer for every clip: who recorded it, whether the players (especially minors) consented to filming, and whether it may appear in a public demo video.
 

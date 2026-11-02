@@ -12,3 +12,6 @@ data/
 *.mov
 *.avi
 *.onnx
+assets/
+replays/
+*.pgm

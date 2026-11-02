@@ -1,0 +1,98 @@
+{
+  "audio_dropped": 26,
+  "audio_packets": 12920,
+  "director": {
+    "jerk_px_s3_mean": 2008.010858242995,
+    "jerk_px_s3_p95": 8251.537810224363,
+    "pan_speed_px_s_max": 724.2994324065819,
+    "pan_speed_px_s_mean": 58.49773391688596,
+    "pan_speed_px_s_p95": 159.63309010903686,
+    "players_in_view_rate": 0.7464703174757251,
+    "players_tracked_mean": 42.57605652579656
+  },
+  "encoder_held_frames": 0,
+  "late_frames": 0,
+  "latency_ingest_to_output": {
+    "count": 7501,
+    "max_ms": 4140.324064,
+    "mean_ms": 428.2155803668844,
+    "p50_ms": 377.221375,
+    "p95_ms": 598.067431,
+    "p99_ms": 1099.13749
+  },
+  "live_frames": 7501,
+  "output_frames": 8707,
+  "output_mbytes": 124.383398,
+  "peak_rss_mb": 1965.21875,
+  "processing_fps": 73.07565808132443,
+  "renderer": "D3D12 (Intel(R) Iris(R) Xe Graphics)",
+  "replay_source_frames": 603,
+  "replays": [
+    {
+      "clip": "replays/replay_000.mp4",
+      "id": 0,
+      "mark_to_clip_ms": 3796.608934,
+      "source_end": 641.0,
+      "source_frames": 201,
+      "source_start": 633.0
+    },
+    {
+      "clip": "replays/replay_001.mp4",
+      "id": 1,
+      "mark_to_clip_ms": 3310.791991,
+      "source_end": 760.0,
+      "source_frames": 201,
+      "source_start": 752.0
+    },
+    {
+      "clip": "replays/replay_002.mp4",
+      "id": 2,
+      "mark_to_clip_ms": 4810.007052,
+      "source_end": 821.0,
+      "source_frames": 201,
+      "source_start": 813.0
+    }
+  ],
+  "source": {
+    "fps": 25.0,
+    "height": 1906,
+    "width": 3840
+  },
+  "source_seconds_processed": 300.04,
+  "speed_x_realtime": 2.923026323252978,
+  "wall_seconds": 102.647040026,
+  "work_per_frame": {
+    "analysis": {
+      "count": 8104,
+      "max_ms": 170.564582,
+      "mean_ms": 11.58724316337611,
+      "p50_ms": 10.957811,
+      "p95_ms": 18.98413,
+      "p99_ms": 31.093356
+    },
+    "composite": {
+      "count": 8104,
+      "max_ms": 103.540328,
+      "mean_ms": 5.961084411154985,
+      "p50_ms": 4.772664,
+      "p95_ms": 12.799676,
+      "p99_ms": 27.611324
+    },
+    "decode": {
+      "count": 7516,
+      "max_ms": 109.302687,
+      "mean_ms": 9.593895685337946,
+      "p50_ms": 8.789532,
+      "p95_ms": 16.379463,
+      "p99_ms": 29.76398
+    },
+    "encode": {
+      "count": 8104,
+      "max_ms": 163.985774,
+      "mean_ms": 2.3523658668558736,
+      "p50_ms": 0.961637,
+      "p95_ms": 10.988404,
+      "p99_ms": 26.525117
+    }
+  }
+}

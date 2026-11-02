@@ -1,0 +1,8 @@
+[
+  {"t": 600.0, "type": "teams", "home": "BLUE", "away": "WHITE"},
+  {"t": 600.0, "type": "kickoff"},
+  {"t": 602.0, "type": "lower_third", "text": "Match Director  -  automated production demo", "seconds": 6},
+  {"t": 640.0, "type": "goal", "team": "home", "text": "DEMO EVENT (not a real goal)"},
+  {"t": 760.0, "type": "replay", "seconds": 8},
+  {"t": 820.0, "type": "goal", "team": "away", "text": "DEMO EVENT (not a real goal)"}
+]

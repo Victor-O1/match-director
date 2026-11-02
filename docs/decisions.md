@@ -23,3 +23,19 @@ Each entry: what was decided, why, and what would make us revisit it.
 
 ## 2026-11-02 — Input footage: user's own panoramic match recordings
 - The user has their own panoramic football recordings in several Drive folders (two halves per match). They are the primary dev/demo data. SoccerTrack v2 stays a candidate for ground-truth evaluation. Status in `docs/dataset_status.md`.
+
+## 2026-11-02 — Detector: background subtraction, not a neural network (for now)
+- **Options:** (a) background subtraction (fixed camera, CPU, ~11 ms/frame); (b) YOLO-family ONNX on CPU (slow on 4K without a GPU, needs tiling; Ultralytics weights are AGPL); (c) wait for an NVIDIA GPU.
+- **Chose (a)** to finish the pipeline end to end. The `Detection` struct is the seam for (b). Known cost: shadows cause false tracks (see LESSONS.md).
+
+## 2026-11-02 — Graphics: OpenGL ES 3.0 via EGL surfaceless, Mesa D3D12 on WSL
+- The real Iris Xe GPU is reachable from WSL2 through Mesa's D3D12 Gallium driver (ES 3.0 only). The same code runs on llvmpipe in CI. Vulkan was out of scope.
+
+## 2026-11-02 — Replay store: compressed packets + second decoder
+- ~75 MB for 30 s vs ~8 GB of decoded 4K frames. Re-decoding is fast enough. A second decoder keeps the live decoder's state untouched.
+
+## 2026-11-02 — Control API: own minimal HTTP server
+- ~200 lines on POSIX sockets, loopback by default, one connection at a time. It avoids pulling in a web framework for one operator. **Revisit** for multi-user or internet-facing use (TLS, auth): use a proper library there.
+
+## 2026-11-02 — `--realtime` defaults to 4 decode threads
+- Measured latency/throughput trade-off (LESSONS.md).

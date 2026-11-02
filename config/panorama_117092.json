@@ -1,0 +1,17 @@
+{
+  "comment": "Night match, stitched 3840x1906 fixed panorama. Pitch polygon traced by eye from a frame at t=600 s, in normalised [0,1] coordinates; it excludes stands, benches and floodlights.",
+  "pitch_polygon": [
+    [0.10, 0.50], [0.20, 0.40], [0.33, 0.32], [0.50, 0.28], [0.66, 0.29],
+    [0.80, 0.33], [0.90, 0.40], [0.94, 0.49], [0.905, 0.555], [0.84, 0.63],
+    [0.72, 0.72], [0.50, 0.77], [0.30, 0.74], [0.18, 0.68], [0.08, 0.60]
+  ],
+  "detector": {
+    "downscale": 2,
+    "min_area": 10,
+    "max_area": 3000
+  },
+  "director": {
+    "min_width_px": 1100,
+    "margin_px": 420
+  }
+}

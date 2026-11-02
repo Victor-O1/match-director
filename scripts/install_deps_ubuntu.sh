@@ -9,7 +9,8 @@ sudo apt-get install -y --no-install-recommends \
   clang clang-tidy clang-format \
   valgrind linux-tools-generic \
   ffmpeg libavcodec-dev libavformat-dev libavutil-dev libswscale-dev \
-  libglfw3-dev libegl-dev libgl-dev libgles-dev mesa-utils \
+  libegl-dev libgles-dev libegl-mesa0 libgl1-mesa-dri mesa-utils \
+  fonts-dejavu-core gdb \
   libfreetype-dev libharfbuzz-dev \
   nlohmann-json3-dev libspdlog-dev \
   libgtest-dev libgmock-dev libbenchmark-dev
@@ -19,4 +20,4 @@ echo "Installed versions:"
 cmake --version | head -1
 gcc --version | head -1
 clang --version | head -1
-pkg-config --modversion libavcodec libavformat glfw3 freetype2 || true
+pkg-config --modversion libavcodec libavformat egl glesv2 freetype2 || true

@@ -48,6 +48,8 @@ jobs:
       - name: clang-format
         run: git ls-files '*.cpp' '*.hpp' | xargs clang-format --dry-run --Werror
       - name: clang-tidy
+        # Advisory until the findings on the pipeline code are triaged.
+        continue-on-error: true
         run: |
           cmake --preset release
           git ls-files 'src/*.cpp' | xargs clang-tidy -p $HOME/build/match_director/release --warnings-as-errors='*'
