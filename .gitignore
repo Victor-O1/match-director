@@ -15,3 +15,6 @@ data/
 assets/
 replays/
 *.pgm
+
+# Local assistant notes (not part of the project)
+CLAUDE.md
