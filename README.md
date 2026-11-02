@@ -12,6 +12,24 @@ Written in C++20. Linux (developed on WSL2 Ubuntu 24.04).
 
 > **Status:** works end to end on a real 45-minute night match recording, measured on 5-minute sections. It is a prototype: the detector is classical computer vision (see *Limitations*), and nothing has been tested yet with a live camera or a real RTMP/SRT server.
 
+## Before → after
+
+**Before:** the raw input, one fixed 3840×1906 stitched panorama (night match, 25 fps).
+
+![Raw panorama input](docs/images/before_panorama.jpg)
+
+**After:** the same moment, as Match Director's 1280×720 program output. The virtual camera has found and framed the play, and the scoreboard, clock and LIVE bug are rendered on the GPU.
+
+![Program output, live](docs/images/after_live.jpg)
+
+**Instant replay:** re-decoded from the packet buffer, half speed, a tighter camera, with the REPLAY/SLOW MOTION bug. The score reflects a *demo* goal event.
+
+![Program output, replay](docs/images/after_replay.jpg)
+
+**What the detector sees:** boxes on the half-resolution analysis frame. The players are found; a few floodlight-shadow fragments still pass (see *Limitations*).
+
+![Detector boxes](docs/images/detector_boxes.jpg)
+
 ## Pipeline
 
 ```
