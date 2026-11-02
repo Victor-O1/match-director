@@ -1,0 +1,14 @@
+build/
+out/
+.vscode/
+.idea/
+*.swp
+compile_commands.json
+
+# Video and model files are never committed (size + licences). See docs/dataset_status.md.
+data/
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.onnx

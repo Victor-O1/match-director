@@ -1,0 +1,27 @@
+date: 2026-11-02T09:25:40+00:00
+git: no-commit
+cpu: 13th Gen Intel(R) Core(TM) i7-13700H
+logical cpus: 20
+kernel: 6.6.87.2-microsoft-standard-WSL2
+compiler: c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+note: running under WSL2
+
+--------------------------------------------------------------------------------------------------------------
+Benchmark                                                    Time             CPU   Iterations UserCounters...
+--------------------------------------------------------------------------------------------------------------
+BM_SpscPushPopSameThread_mean                             1.15 ns         1.15 ns            3 items_per_second=874.32M/s
+BM_SpscPushPopSameThread_median                           1.10 ns         1.10 ns            3 items_per_second=912.318M/s
+BM_SpscPushPopSameThread_stddev                          0.102 ns        0.102 ns            3 items_per_second=74.0933M/s
+BM_SpscPushPopSameThread_cv                               8.91 %          8.90 %             3 items_per_second=8.47%
+BM_SpscTwoThreadThroughput/real_time_mean                 41.7 ms         41.6 ms            3 items_per_second=48.0579M/s
+BM_SpscTwoThreadThroughput/real_time_median               42.4 ms         42.3 ms            3 items_per_second=47.1803M/s
+BM_SpscTwoThreadThroughput/real_time_stddev               2.16 ms         2.16 ms            3 items_per_second=2.54593M/s
+BM_SpscTwoThreadThroughput/real_time_cv                   5.18 %          5.18 %             3 items_per_second=5.30%
+BM_SpscHandoffLatency/iterations:3/real_time_mean         74.1 ms         74.0 ms            3 max_ns=249.049k p50_ns=234 p99_ns=294
+BM_SpscHandoffLatency/iterations:3/real_time_median       73.8 ms         73.7 ms            3 max_ns=122.319k p50_ns=235 p99_ns=293
+BM_SpscHandoffLatency/iterations:3/real_time_stddev      0.919 ms        0.895 ms            3 max_ns=235.64k p50_ns=14.5258 p99_ns=12.53
+BM_SpscHandoffLatency/iterations:3/real_time_cv           1.24 %          1.21 %             3 max_ns=94.62% p50_ns=6.21% p99_ns=4.26%
+BM_ComputeAndSnapCrop_mean                                21.9 ns         21.9 ns            3
+BM_ComputeAndSnapCrop_median                              21.9 ns         21.9 ns            3
+BM_ComputeAndSnapCrop_stddev                             0.104 ns        0.104 ns            3
+BM_ComputeAndSnapCrop_cv                                  0.47 %          0.47 %             3

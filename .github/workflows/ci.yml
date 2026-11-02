@@ -1,0 +1,53 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        preset: [debug-asan, debug-tsan, release]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: bash scripts/install_deps_ubuntu.sh
+      - name: Configure
+        run: cmake --preset ${{ matrix.preset }}
+      - name: Build
+        run: cmake --build --preset ${{ matrix.preset }}
+      - name: Test
+        env:
+          TSAN_OPTIONS: halt_on_error=1
+          ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
+          UBSAN_OPTIONS: print_stacktrace=1:halt_on_error=1
+        # TSAN on recent kernels needs fewer ASLR bits or it aborts at start.
+        run: |
+          if [ "${{ matrix.preset }}" = "debug-tsan" ]; then sudo sysctl vm.mmap_rnd_bits=28; fi
+          ctest --preset ${{ matrix.preset }}
+
+  valgrind:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/install_deps_ubuntu.sh
+      - run: cmake --preset release && cmake --build --preset release --target md_tests
+      - name: Memcheck unit tests
+        run: >
+          valgrind --error-exitcode=1 --leak-check=full --errors-for-leak-kinds=definite,indirect
+          $HOME/build/match_director/release/tests/md_tests
+
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/install_deps_ubuntu.sh
+      - name: clang-format
+        run: git ls-files '*.cpp' '*.hpp' | xargs clang-format --dry-run --Werror
+      - name: clang-tidy
+        run: |
+          cmake --preset release
+          git ls-files 'src/*.cpp' | xargs clang-tidy -p $HOME/build/match_director/release --warnings-as-errors='*'
